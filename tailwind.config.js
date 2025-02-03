@@ -7,11 +7,11 @@ module.exports = {
         small: "340px",
         medium: "540px",
         large: "768px",
-        largee: '870px',
-        xxlarge: "988px",
-        xlarge: "1180px" 
+        xlarge: "988px",
+        xxlarge: "1180px" 
       },
   },
+},
   plugins: [],
-}
 
+}

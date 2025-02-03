@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+</head>
+<body class="bg-gray-100 ">
+        
+      <!------this is the services section containing what I do
+      <section id="service" class="xxlarge:px-32 large:px-20 small:px-6">
+        <div class="service_data py-20 h-fit">
+            <h1 class="row text-center text-5xl font-bold pb-20">Portfolio</h1>
+   
+            <div class="grid grid-cols-3 gap-6 medium:grid-cols-8 xlarge:grid-cols-12">
+                <div class="col-span-4 h-64 px-6 py-6 bg-yellow-400 shadow-lg shadow-blue-800 outline outline-1
+                 outline-slate-200 overflow-hidden">
+                    <h1 class="text-lg font-semibold">UI/UX Design</h1>
+                    <p class="text-wrap">creating amazing user interface that are user-friendly and efficient.</p>
+                </div>
+                <div class="col-span-4 h-64 px-6 py-6 bg-blue-500 shadow-lg shadow-blue-800 outline 
+                outline-1 outline-slate-200 overflow-hidden">
+                    <h1 class="text-lg font-semibold">Web Developement</h1>
+                    <p>Building and maintaining websites and web applications.</p>
+                </div>
+                <div class="col-span-4 h-64 px-6 py-6 bg-red-400 shadow-lg shadow-blue-800 outline outline-1
+                 outline-slate-200 overflow-hidden">
+                    <h1 class="text-lg font-semibold">Web Design</h1>
+                    <p>Designing websites that are visually appelling and user-friendly.</p>
+                </div>
+            </div>
+        </div>
+    </section>    ---->
+
+    <section class="bg-inherit xxlarge:px-32 large:px-20 small:px-6 py-10">
+        <div class="grid grid-cols-3 gap-4 medium:grid-cols-8 xlarge:grid-cols-12">
+            <div class="bg-blue-700 col-span-4 py-32 px-10"></div>
+            <div class="bg-red-700 col-span-4 py-32 px-10"></div>
+            <div class="bg-yellow-700 col-span-4 py-32 px-10"></div>
+        </div>
+    </section>
+
+
+
+<script>
+        const links = document.querySelectorAll('.link');
+
+        function setActiveLink() {
+            let fromTop = window.scrollY;
+
+            links.forEach(link => {
+                let section = document.querySelector(link.hash);
+
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                document.querySelector(link.hash).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        window.addEventListener('scroll', setActiveLink);
+        window.addEventListener('load', setActiveLink);
+</script>
+<script src="main.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    ScrollReveal().reveal('.shadow', { duration: 2000 }); 
+</script>
+
+</body>
+</html>
